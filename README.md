@@ -15,7 +15,7 @@ clean: ; $(RM) *.o *.d main
 .PHONY: clean
 
 # fully static link archive with -static
-ARFLAGS = rvU
+ARFLAGS := rvU
 (%): % ;
 %.a: ; $(AR) $(ARFLAGS) $@ $?
 libfoo.a: libfoo.a($(patsubst %.c,%.o,$(wildcard *.c))) # .cpp
