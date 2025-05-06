@@ -10,11 +10,11 @@ LDLIBS   = # -lfoo
 
 # target name is basename of one of the source files
 main: $(patsubst %.c,%.o,$(wildcard *.c)) # .cpp
--include *.d
+-include $(wildcard *.d)
 clean: ; $(RM) *.o *.d main
 .PHONY: clean
 
-# fully static link archive .a with -static
+# fully static link archive with -static
 ARFLAGS = rvU
 (%): % ;
 %.a: ; $(AR) $(ARFLAGS) $@ $?
