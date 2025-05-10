@@ -10,7 +10,7 @@ LDLIBS   := # -lfoo
 
 # target name is basename of one of the source files
 main: $(patsubst %.c,%.o,$(wildcard *.c)) # .cpp
--include $(patsubst %.c,%.d,$(wildcard *.c)) # .cpp
+-include *.d
 clean: ; $(RM) *.o *.d main
 .PHONY: clean
 
